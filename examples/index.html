@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residual Calculation Examples - Step-by-Step Guide | Residual Calculator</title>
+    <meta name="description" content="Learn residual calculations with real-world examples. Step-by-step tutorials for basic, standardized, and studentized residuals with practical applications.">
+    <meta name="keywords" content="residual examples, residual calculation tutorial, regression examples, statistical analysis examples, residual interpretation">
+    <meta name="author" content="Residual Calculator">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Residual Calculation Examples - Step-by-Step Guide">
+    <meta property="og:description" content="Learn residual calculations with real-world examples and step-by-step tutorials.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://residualcalculator.org/examples/">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://residualcalculator.org/examples/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="/" class="nav__logo">
+                    <span class="nav__logo-icon">📊</span>
+                    Residual Calculator
+                </a>
+            </div>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="/" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/definition/" class="nav__link">Definition</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/formulas/" class="nav__link">Formulas</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/calculator/" class="nav__link">Calculator</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/examples/" class="nav__link nav__link--active">Examples</a>
+                </li>
+            </ul>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Residual Calculation Examples</h1>
+                    <p class="hero__subtitle">
+                        Learn how to calculate and interpret residuals with real-world examples 
+                        and step-by-step tutorials for practical applications.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example Categories -->
+        <section class="example-categories">
+            <div class="container">
+                <div class="categories-grid">
+                    <a href="#basic-examples" class="category-card">
+                        <div class="category-icon">📏</div>
+                        <h3>Basic Examples</h3>
+                        <p>Simple residual calculations</p>
+                    </a>
+                    
+                    <a href="#regression-examples" class="category-card">
+                        <div class="category-icon">📈</div>
+                        <h3>Regression Analysis</h3>
+                        <p>Real regression case studies</p>
+                    </a>
+                    
+                    <a href="#diagnostic-examples" class="category-card">
+                        <div class="category-icon">🔍</div>
+                        <h3>Model Diagnostics</h3>
+                        <p>Using residuals for model checking</p>
+                    </a>
+                    
+                    <a href="#advanced-examples" class="category-card">
+                        <div class="category-icon">🎓</div>
+                        <h3>Advanced Cases</h3>
+                        <p>Complex residual analysis</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basic Examples -->
+        <section class="example-section" id="basic-examples">
+            <div class="container">
+                <h2 class="section-title">Basic Residual Examples</h2>
+                
+                <!-- Example 1: Simple Linear Regression -->
+                <div class="example-card">
+                    <h3 class="example-title">Example 1: House Price Prediction</h3>
+                    <div class="example-scenario">
+                        <h4>Scenario:</h4>
+                        <p>
+                            You're predicting house prices based on square footage. Your regression model 
+                            predicts a house should cost $250,000, but it actually sold for $265,000.
+                        </p>
+                    </div>
+                    
+                    <div class="example-solution">
+                        <h4>Solution:</h4>
+                        <div class="step">
+                            <h5>Step 1: Identify values</h5>
+                            <ul>
+                                <li>Observed value (y) = $265,000</li>
+                                <li>Predicted value (ŷ) = $250,000</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="step">
+                            <h5>Step 2: Apply formula</h5>
+                            <div class="formula-box">
+                                <p class="formula">$$e = y - \hat{y}$$</p>
+                                <p class="formula">$$e = 265,000 - 250,000 = 15,000$$</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <h5>Step 3: Interpret result</h5>
+                            <div class="interpretation">
+                                <p><strong>Residual = +$15,000</strong></p>
+                                <p>
+                                    The positive residual means the model <em>underestimated</em> the house price by $15,000. 
+                                    The actual price was higher than predicted.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="try-it">
+                        <a href="/calculator/#basic" class="btn btn--primary">Try This Calculation</a>
+                    </div>
+                </div>
+
+                <!-- Example 2: Multiple Observations -->
+                <div class="example-card">
+                    <h3 class="example-title">Example 2: Student Test Scores</h3>
+                    <div class="example-scenario">
+                        <h4>Scenario:</h4>
+                        <p>
+                            A teacher uses study hours to predict test scores for 5 students. 
+                            Calculate residuals for each student to see how well the model performs.
+                        </p>
+                    </div>
+                    
+                    <div class="data-table">
+                        <h4>Data:</h4>
+                        <table class="example-table">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Study Hours</th>
+                                    <th>Actual Score</th>
+                                    <th>Predicted Score</th>
+                                    <th>Residual</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Alice</td>
+                                    <td>5</td>
+                                    <td>85</td>
+                                    <td>82</td>
+                                    <td class="positive">+3</td>
+                                </tr>
+                                <tr>
+                                    <td>Bob</td>
+                                    <td>8</td>
+                                    <td>92</td>
+                                    <td>95</td>
+                                    <td class="negative">-3</td>
+                                </tr>
+                                <tr>
+                                    <td>Carol</td>
+                                    <td>3</td>
+                                    <td>78</td>
+                                    <td>75</td>
+                                    <td class="positive">+3</td>
+                                </tr>
+                                <tr>
+                                    <td>Dave</td>
+                                    <td>10</td>
+                                    <td>98</td>
+                                    <td>101</td>
+                                    <td class="negative">-3</td>
+                                </tr>
+                                <tr>
+                                    <td>Eve</td>
+                                    <td>6</td>
+                                    <td>88</td>
+                                    <td>88</td>
+                                    <td class="zero">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="example-analysis">
+                        <h4>Analysis:</h4>
+                        <ul class="analysis-points">
+                            <li><strong>Alice & Carol:</strong> Model underestimated their scores (positive residuals)</li>
+                            <li><strong>Bob & Dave:</strong> Model overestimated their scores (negative residuals)</li>
+                            <li><strong>Eve:</strong> Perfect prediction (zero residual)</li>
+                            <li><strong>Overall:</strong> Small residuals suggest good model fit</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="try-it">
+                        <a href="/calculator/#batch" class="btn btn--primary">Try Batch Calculator</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regression Examples -->
+        <section class="example-section" id="regression-examples">
+            <div class="container">
+                <h2 class="section-title">Regression Analysis Examples</h2>
+                
+                <!-- Example 3: Standardized Residuals -->
+                <div class="example-card">
+                    <h3 class="example-title">Example 3: Standardized Residuals in Sales Forecasting</h3>
+                    <div class="example-scenario">
+                        <h4>Scenario:</h4>
+                        <p>
+                            A company uses advertising spend to predict monthly sales. You need to identify 
+                            which months had unusually high or low sales relative to the advertising spend.
+                        </p>
+                    </div>
+                    
+                    <div class="example-data">
+                        <h4>Given Information:</h4>
+                        <ul>
+                            <li>January sales: $50,000 (predicted: $48,000)</li>
+                            <li>Residual standard error: $3,000</li>
+                            <li>Raw residual: $50,000 - $48,000 = $2,000</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-solution">
+                        <h4>Calculate Standardized Residual:</h4>
+                        <div class="step">
+                            <h5>Step 1: Apply standardized residual formula</h5>
+                            <div class="formula-box">
+                                <p class="formula">$$r = \frac{e}{s} = \frac{2,000}{3,000} = 0.67$$</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <h5>Step 2: Interpret result</h5>
+                            <div class="interpretation">
+                                <p><strong>Standardized Residual = 0.67</strong></p>
+                                <p>
+                                    Since |0.67| < 2, this is considered a normal observation. 
+                                    The sales were slightly higher than expected but within normal variation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="guidelines">
+                        <h4>Interpretation Guidelines:</h4>
+                        <ul>
+                            <li>|r| < 2: Normal observation</li>
+                            <li>2 ≤ |r| < 3: Potential outlier, investigate</li>
+                            <li>|r| ≥ 3: Likely outlier, requires attention</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="try-it">
+                        <a href="/calculator/#standardized" class="btn btn--primary">Calculate Standardized Residuals</a>
+                    </div>
+                </div>
+
+                <!-- Example 4: Multiple Regression -->
+                <div class="example-card">
+                    <h3 class="example-title">Example 4: Multiple Regression - Car Price Prediction</h3>
+                    <div class="example-scenario">
+                        <h4>Scenario:</h4>
+                        <p>
+                            Predicting used car prices using age, mileage, and brand. A 3-year-old Honda Civic 
+                            with 30,000 miles sold for $18,500, but your model predicted $17,800.
+                        </p>
+                    </div>
+                    
+                    <div class="example-data">
+                        <h4>Model Information:</h4>
+                        <ul>
+                            <li>Residual: $18,500 - $17,800 = $700</li>
+                            <li>Leverage (h): 0.08</li>
+                            <li>MSE: 1,500,000 (standard error: $1,225)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-solution">
+                        <h4>Calculate Studentized Residual:</h4>
+                        <div class="step">
+                            <h5>Step 1: Calculate studentized residual</h5>
+                            <div class="formula-box">
+                                <p class="formula">$$t = \frac{e}{s\sqrt{1-h}} = \frac{700}{1,225 \times \sqrt{1-0.08}}$$</p>
+                                <p class="formula">$$t = \frac{700}{1,225 \times 0.959} = \frac{700}{1,175} = 0.596$$</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <h5>Step 2: Interpret result</h5>
+                            <div class="interpretation">
+                                <p><strong>Studentized Residual = 0.596</strong></p>
+                                <p>
+                                    This is well below the threshold of 2, indicating the car's price is 
+                                    consistent with the model's expectations. The slight overprediction 
+                                    is within normal variation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="try-it">
+                        <a href="/calculator/#studentized" class="btn btn--primary">Calculate Studentized Residuals</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagnostic Examples -->
+        <section class="example-section" id="diagnostic-examples">
+            <div class="container">
+                <h2 class="section-title">Model Diagnostic Examples</h2>
+                
+                <!-- Example 5: Outlier Detection -->
+                <div class="example-card">
+                    <h3 class="example-title">Example 5: Detecting Outliers in Medical Data</h3>
+                    <div class="example-scenario">
+                        <h4>Scenario:</h4>
+                        <p>
+                            A hospital uses patient age to predict length of stay. One patient's data 
+                            seems unusual - they stayed much longer than expected.
+                        </p>
+                    </div>
+                    
+                    <div class="example-data">
+                        <h4>Patient Data:</h4>
+                        <ul>
+                            <li>Age: 45 years</li>
+                            <li>Actual stay: 12 days</li>
+                            <li>Predicted stay: 4 days</li>
+                            <li>Model standard error: 2 days</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-solution">
+                        <h4>Outlier Analysis:</h4>
+                        <div class="step">
+                            <h5>Step 1: Calculate raw residual</h5>
+                            <div class="formula-box">
+                                <p class="formula">$$e = 12 - 4 = 8 \text{ days}$$</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <h5>Step 2: Calculate standardized residual</h5>
+                            <div class="formula-box">
+                                <p class="formula">$$r = \frac{8}{2} = 4$$</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <h5>Step 3: Evaluate outlier status</h5>
+                            <div class="interpretation outlier">
+                                <p><strong>Standardized Residual = 4</strong></p>
+                                <p>
+                                    Since |4| > 3, this is definitely an outlier. The patient stayed 
+                                    significantly longer than the model predicted, suggesting there 
+                                    may have been complications or other factors not captured by age alone.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-steps">
+                        <h4>Next Steps:</h4>
+                        <ul class="feature-list">
+                            <li>Investigate the patient's case for unusual circumstances</li>
+                            <li>Consider additional predictor variables (e.g., diagnosis, severity)</li>
+                            <li>Decide whether to include or exclude this observation</li>
+                            <li>Re-evaluate model assumptions and fit</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Example 6: Model Assumption Checking -->
+                <div class="example-card">
+                    <h3 class="example-title">Example 6: Checking Model Assumptions</h3>
+                    <div class="example-scenario">
+                        <h4>Scenario:</h4>
+                        <p>
+                            After fitting a linear regression model, you need to check whether the 
+                            model assumptions are satisfied using residual analysis.
+                        </p>
+                    </div>
+                    
+                    <div class="assumption-checks">
+                        <h4>Key Assumptions to Check:</h4>
+                        
+                        <div class="assumption">
+                            <h5>1. Linearity</h5>
+                            <p><strong>Check:</strong> Plot residuals vs. fitted values</p>
+                            <p><strong>Good:</strong> Random scatter around zero</p>
+                            <p><strong>Bad:</strong> Curved pattern suggests non-linearity</p>
+                        </div>
+                        
+                        <div class="assumption">
+                            <h5>2. Homoscedasticity (Constant Variance)</h5>
+                            <p><strong>Check:</strong> Plot residuals vs. fitted values</p>
+                            <p><strong>Good:</strong> Constant spread across all fitted values</p>
+                            <p><strong>Bad:</strong> Funnel shape suggests changing variance</p>
+                        </div>
+                        
+                        <div class="assumption">
+                            <h5>3. Normality of Residuals</h5>
+                            <p><strong>Check:</strong> Q-Q plot of residuals</p>
+                            <p><strong>Good:</strong> Points fall close to diagonal line</p>
+                            <p><strong>Bad:</strong> Systematic deviations from line</p>
+                        </div>
+                        
+                        <div class="assumption">
+                            <h5>4. Independence</h5>
+                            <p><strong>Check:</strong> Plot residuals vs. time (if applicable)</p>
+                            <p><strong>Good:</strong> No systematic patterns</p>
+                            <p><strong>Bad:</strong> Trends or cycles in residuals</p>
+                        </div>
+                    </div>
+                    
+                    <div class="example-residuals">
+                        <h4>Sample Residual Analysis:</h4>
+                        <p>
+                            For a dataset of 20 observations, standardized residuals should:
+                        </p>
+                        <ul>
+                            <li>Have approximately 95% of values between -2 and +2</li>
+                            <li>Show no clear patterns when plotted</li>
+                            <li>Follow approximately normal distribution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Mistakes -->
+        <section class="mistakes-section">
+            <div class="container">
+                <h2 class="section-title">Common Mistakes to Avoid</h2>
+                
+                <div class="mistakes-grid">
+                    <div class="mistake-card">
+                        <h3>❌ Wrong Sign Interpretation</h3>
+                        <p><strong>Mistake:</strong> Confusing positive and negative residuals</p>
+                        <p><strong>Remember:</strong> Positive = underestimated, Negative = overestimated</p>
+                    </div>
+                    
+                    <div class="mistake-card">
+                        <h3>❌ Ignoring Scale</h3>
+                        <p><strong>Mistake:</strong> Comparing raw residuals across different scales</p>
+                        <p><strong>Solution:</strong> Use standardized residuals for comparison</p>
+                    </div>
+                    
+                    <div class="mistake-card">
+                        <h3>❌ Wrong Standard Error</h3>
+                        <p><strong>Mistake:</strong> Using incorrect standard error in calculations</p>
+                        <p><strong>Solution:</strong> Use residual standard error from your model</p>
+                    </div>
+                    
+                    <div class="mistake-card">
+                        <h3>❌ Outlier Overreaction</h3>
+                        <p><strong>Mistake:</strong> Automatically removing all large residuals</p>
+                        <p><strong>Solution:</strong> Investigate outliers before deciding what to do</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Practice These Examples</h2>
+                    <p>Use our calculator to work through these examples and try your own data.</p>
+                    <div class="cta-buttons">
+                        <a href="/calculator/" class="btn btn--primary">Open Calculator</a>
+                        <a href="/definition/" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">Residual Calculator</h3>
+                    <p class="footer__description">
+                        Professional tools for statistical analysis and residual calculations.
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="/definition/">Definition</a></li>
+                        <li><a href="/formulas/">Formulas</a></li>
+                        <li><a href="/calculator/">Calculator</a></li>
+                        <li><a href="/examples/">Examples</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Resources</h4>
+                    <ul class="footer__links">
+                        <li><a href="#help">Help & FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 Residual Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html> 

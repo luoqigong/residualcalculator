@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Residual Calculator | Calculate All Types of Residuals</title>
+    <meta name="description" content="Professional residual calculator supporting basic, standardized, studentized, and deleted residuals. Batch processing, step-by-step calculations, and data export.">
+    <meta name="keywords" content="residual calculator, standardized residual calculator, studentized residual, batch residual calculation, statistical calculator">
+    <meta name="author" content="Residual Calculator">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Advanced Residual Calculator">
+    <meta property="og:description" content="Professional residual calculator supporting all types of residual calculations with batch processing.">
+    <meta property="og:type" content="webapp">
+    <meta property="og:url" content="https://residualcalculator.org/calculator/">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://residualcalculator.org/calculator/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/calculator.css">
+    
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="/" class="nav__logo">
+                    <span class="nav__logo-icon">📊</span>
+                    Residual Calculator
+                </a>
+            </div>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="/" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/definition/" class="nav__link">Definition</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/formulas/" class="nav__link">Formulas</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/calculator/" class="nav__link nav__link--active">Calculator</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/examples/" class="nav__link">Examples</a>
+                </li>
+            </ul>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Advanced Residual Calculator</h1>
+                    <p class="hero__subtitle">
+                        Calculate all types of residuals with step-by-step explanations. 
+                        Supports single calculations, batch processing, and data export.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Tabs -->
+        <section class="calculator-tabs">
+            <div class="container">
+                <div class="tab-nav">
+                    <button class="tab-btn tab-btn--active" data-tab="basic">Basic Residuals</button>
+                    <button class="tab-btn" data-tab="standardized">Standardized</button>
+                    <button class="tab-btn" data-tab="studentized">Studentized</button>
+                    <button class="tab-btn" data-tab="batch">Batch Calculator</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basic Residuals Calculator -->
+        <section class="calculator-section tab-content tab-content--active" id="basic-tab">
+            <div class="container">
+                <div class="calculator-card">
+                    <h2 class="calculator-title">Basic Residual Calculator</h2>
+                    <p class="calculator-description">
+                        Calculate basic residuals using the formula: Residual = Observed - Predicted
+                    </p>
+                    
+                    <form class="calculator-form advanced-calculator-form" data-calculation-type="basic">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="basic-observed" class="form-label">Observed Value (y)</label>
+                                <input type="number" id="basic-observed" name="observed" class="form-input" 
+                                       placeholder="Enter observed value" step="any" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="basic-predicted" class="form-label">Predicted Value (ŷ)</label>
+                                <input type="number" id="basic-predicted" name="predicted" class="form-input" 
+                                       placeholder="Enter predicted value" step="any" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn--primary">Calculate Residual</button>
+                            <button type="button" class="btn btn-clear">Clear</button>
+                        </div>
+                    </form>
+                    
+                    <div class="result-container" id="basic-result" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standardized Residuals Calculator -->
+        <section class="calculator-section tab-content" id="standardized-tab">
+            <div class="container">
+                <div class="calculator-card">
+                    <h2 class="calculator-title">Standardized Residual Calculator</h2>
+                    <p class="calculator-description">
+                        Calculate standardized residuals: r = e / s, where s is the residual standard error
+                    </p>
+                    
+                    <form class="calculator-form advanced-calculator-form" data-calculation-type="standardized">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="std-observed" class="form-label">Observed Value (y)</label>
+                                <input type="number" id="std-observed" name="observed" class="form-input" 
+                                       placeholder="Enter observed value" step="any" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="std-predicted" class="form-label">Predicted Value (ŷ)</label>
+                                <input type="number" id="std-predicted" name="predicted" class="form-input" 
+                                       placeholder="Enter predicted value" step="any" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="std-error" class="form-label">Standard Error (s)</label>
+                                <input type="number" id="std-error" name="standardError" class="form-input" 
+                                       placeholder="Enter standard error" step="any" min="0.001" required>
+                                <small class="form-help">Residual standard error from your regression model</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn--primary">Calculate Standardized Residual</button>
+                            <button type="button" class="btn btn-clear">Clear</button>
+                        </div>
+                    </form>
+                    
+                    <div class="result-container" id="standardized-result" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studentized Residuals Calculator -->
+        <section class="calculator-section tab-content" id="studentized-tab">
+            <div class="container">
+                <div class="calculator-card">
+                    <h2 class="calculator-title">Studentized Residual Calculator</h2>
+                    <p class="calculator-description">
+                        Calculate studentized residuals with leverage adjustment: t = e / (s√(1-h))
+                    </p>
+                    
+                    <form class="calculator-form advanced-calculator-form" data-calculation-type="studentized">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="stud-observed" class="form-label">Observed Value (y)</label>
+                                <input type="number" id="stud-observed" name="observed" class="form-input" 
+                                       placeholder="Enter observed value" step="any" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="stud-predicted" class="form-label">Predicted Value (ŷ)</label>
+                                <input type="number" id="stud-predicted" name="predicted" class="form-input" 
+                                       placeholder="Enter predicted value" step="any" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="stud-leverage" class="form-label">Leverage (h)</label>
+                                <input type="number" id="stud-leverage" name="leverage" class="form-input" 
+                                       placeholder="Enter leverage value" step="any" min="0" max="0.999" required>
+                                <small class="form-help">Leverage value for this observation (0 < h < 1)</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="stud-mse" class="form-label">Mean Squared Error (MSE)</label>
+                                <input type="number" id="stud-mse" name="mse" class="form-input" 
+                                       placeholder="Enter MSE" step="any" min="0.001" required>
+                                <small class="form-help">Mean squared error from your regression model</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="stud-n" class="form-label">Sample Size (n)</label>
+                                <input type="number" id="stud-n" name="n" class="form-input" 
+                                       placeholder="Number of observations" min="3" value="10">
+                                <small class="form-help">Total number of observations</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="stud-p" class="form-label">Parameters (p)</label>
+                                <input type="number" id="stud-p" name="p" class="form-input" 
+                                       placeholder="Number of parameters" min="1" value="2">
+                                <small class="form-help">Number of parameters including intercept</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn--primary">Calculate Studentized Residual</button>
+                            <button type="button" class="btn btn-clear">Clear</button>
+                        </div>
+                    </form>
+                    
+                    <div class="result-container" id="studentized-result" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batch Calculator -->
+        <section class="calculator-section tab-content" id="batch-tab">
+            <div class="container">
+                <div class="calculator-card">
+                    <h2 class="calculator-title">Batch Residual Calculator</h2>
+                    <p class="calculator-description">
+                        Calculate residuals for multiple observations at once. Add rows as needed and export results.
+                    </p>
+                    
+                    <form class="calculator-form" id="batch-calc">
+                        <div class="batch-controls">
+                            <button type="button" id="add-row" class="btn">Add Row</button>
+                            <button type="button" class="btn btn-clear">Clear All</button>
+                        </div>
+                        
+                        <div class="batch-table">
+                            <div class="table-header">
+                                <span class="col-number">#</span>
+                                <span class="col-observed">Observed</span>
+                                <span class="col-predicted">Predicted</span>
+                                <span class="col-action">Action</span>
+                            </div>
+                            
+                            <div id="batch-data-container" class="table-body">
+                                <div class="data-row">
+                                    <span class="row-number">1</span>
+                                    <input type="number" class="form-input observed-input" placeholder="Observed" step="any">
+                                    <input type="number" class="form-input predicted-input" placeholder="Predicted" step="any">
+                                    <button type="button" class="btn-remove remove-row" aria-label="Remove row">×</button>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <span class="row-number">2</span>
+                                    <input type="number" class="form-input observed-input" placeholder="Observed" step="any">
+                                    <input type="number" class="form-input predicted-input" placeholder="Predicted" step="any">
+                                    <button type="button" class="btn-remove remove-row" aria-label="Remove row">×</button>
+                                </div>
+                                
+                                <div class="data-row">
+                                    <span class="row-number">3</span>
+                                    <input type="number" class="form-input observed-input" placeholder="Observed" step="any">
+                                    <input type="number" class="form-input predicted-input" placeholder="Predicted" step="any">
+                                    <button type="button" class="btn-remove remove-row" aria-label="Remove row">×</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn--primary">Calculate All Residuals</button>
+                        </div>
+                    </form>
+                    
+                    <div class="result-container" id="batch-results" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section class="help-section">
+            <div class="container">
+                <h2 class="section-title">Calculator Help</h2>
+                <div class="help-grid">
+                    <div class="help-card">
+                        <h3>🧮 Basic Calculator</h3>
+                        <p>Calculate simple residuals (e = y - ŷ). Enter your observed and predicted values to get instant results.</p>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>📊 Standardized Calculator</h3>
+                        <p>Standardized residuals (r = e/s) normalize residuals by the standard error. Values > 2 may indicate outliers.</p>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>🎓 Studentized Calculator</h3>
+                        <p>Studentized residuals account for leverage. Requires leverage values and model parameters for accurate calculation.</p>
+                    </div>
+                    
+                    <div class="help-card">
+                        <h3>📋 Batch Calculator</h3>
+                        <p>Process multiple observations simultaneously. Results include summary statistics and can be exported as CSV or JSON.</p>
+                    </div>
+                </div>
+                
+                <div class="tips-section">
+                    <h3>💡 Tips for Better Results</h3>
+                    <ul class="feature-list">
+                        <li>Ensure your predicted values come from a properly fitted model</li>
+                        <li>For standardized residuals, use the correct residual standard error from your model</li>
+                        <li>Leverage values should be between 0 and 1 (exclusive)</li>
+                        <li>Large residuals (|residual| > 2-3 standard errors) may indicate outliers</li>
+                        <li>Use batch calculator for efficiency when analyzing multiple observations</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Need More Information?</h2>
+                    <p>Learn about residual definitions, formulas, and see practical examples.</p>
+                    <div class="cta-buttons">
+                        <a href="/definition/" class="btn">Learn Definitions</a>
+                        <a href="/formulas/" class="btn">View Formulas</a>
+                        <a href="/examples/" class="btn btn--primary">See Examples</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">Residual Calculator</h3>
+                    <p class="footer__description">
+                        Professional tools for statistical analysis and residual calculations.
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="/definition/">Definition</a></li>
+                        <li><a href="/formulas/">Formulas</a></li>
+                        <li><a href="/calculator/">Calculator</a></li>
+                        <li><a href="/examples/">Examples</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Resources</h4>
+                    <ul class="footer__links">
+                        <li><a href="#help">Help & FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 Residual Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/calculator.js"></script>
+    <script src="../assets/js/calculator-tabs.js"></script>
+</body>
+</html> 

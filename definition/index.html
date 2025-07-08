@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is a Residual? - Complete Definition | Residual Calculator</title>
+    <meta name="description" content="Learn the complete definition of residuals in statistics. Understand different types of residuals, their importance in regression analysis, and practical applications.">
+    <meta name="keywords" content="residual definition, what is residual, statistical residual, regression residual, residual analysis">
+    <meta name="author" content="Residual Calculator">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="What is a Residual? - Complete Definition">
+    <meta property="og:description" content="Learn the complete definition of residuals in statistics and their importance in regression analysis.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://residualcalculator.org/definition/">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://residualcalculator.org/definition/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="/" class="nav__logo">
+                    <span class="nav__logo-icon">📊</span>
+                    Residual Calculator
+                </a>
+            </div>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="/" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/definition/" class="nav__link nav__link--active">Definition</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/formulas/" class="nav__link">Formulas</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/calculator/" class="nav__link">Calculator</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/examples/" class="nav__link">Examples</a>
+                </li>
+            </ul>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">What is a Residual?</h1>
+                    <p class="hero__subtitle">
+                        Understanding residuals is fundamental to regression analysis and statistical modeling. 
+                        Learn the complete definition, types, and applications of residuals.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Table of Contents -->
+        <section class="toc-section">
+            <div class="container">
+                <div class="toc-box">
+                    <h2 class="toc-title">Table of Contents</h2>
+                    <ul class="toc-list">
+                        <li><a href="#basic-definition">1. Basic Definition</a></li>
+                        <li><a href="#mathematical-definition">2. Mathematical Definition</a></li>
+                        <li><a href="#types-of-residuals">3. Types of Residuals</a></li>
+                        <li><a href="#importance">4. Why Residuals Matter</a></li>
+                        <li><a href="#interpretation">5. How to Interpret Residuals</a></li>
+                        <li><a href="#assumptions">6. Residual Analysis Assumptions</a></li>
+                        <li><a href="#applications">7. Practical Applications</a></li>
+                        <li><a href="#common-mistakes">8. Common Mistakes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basic Definition -->
+        <section class="content-section" id="basic-definition">
+            <div class="container">
+                <h2 class="section-title">1. Basic Definition</h2>
+                <div class="content-grid">
+                    <div class="content-text">
+                        <p class="lead">
+                            A <strong>residual</strong> is the difference between an observed value and the value predicted by a statistical model.
+                        </p>
+                        
+                        <p>
+                            In simple terms, residuals tell us how far off our predictions are from the actual observed data. 
+                            They are the "leftover" or "remaining" differences that our model couldn't explain.
+                        </p>
+                        
+                        <div class="highlight-box">
+                            <h3>Key Points:</h3>
+                            <ul class="feature-list">
+                                <li>Residuals measure prediction errors</li>
+                                <li>They show how well a model fits the data</li>
+                                <li>Smaller residuals indicate better model fit</li>
+                                <li>Residuals are used for model diagnostics</li>
+                            </ul>
+                        </div>
+                        
+                        <p>
+                            Think of residuals as the "unexplained variance" in your data. If you're trying to predict house prices 
+                            based on size, and your model predicts $300,000 but the actual price is $320,000, 
+                            then the residual is $20,000.
+                        </p>
+                    </div>
+                    
+                    <div class="content-visual">
+                        <div class="example-box">
+                            <h3>Simple Example</h3>
+                            <p><strong>Scenario:</strong> Predicting test scores</p>
+                            <div class="example-data">
+                                <p>Observed Score: 85</p>
+                                <p>Predicted Score: 82</p>
+                                <p class="result-highlight">Residual: 85 - 82 = 3</p>
+                            </div>
+                            <p class="example-note">
+                                The model underestimated the score by 3 points.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mathematical Definition -->
+        <section class="content-section" id="mathematical-definition">
+            <div class="container">
+                <h2 class="section-title">2. Mathematical Definition</h2>
+                <div class="content-text">
+                    <div class="formula-section">
+                        <h3>Basic Formula</h3>
+                        <div class="formula-box">
+                            <p class="formula-title">Residual Formula:</p>
+                            <p class="formula">$$e_i = y_i - \hat{y}_i$$</p>
+                            <div class="formula-explanation">
+                                <p><strong>Where:</strong></p>
+                                <ul>
+                                    <li>$e_i$ = residual for observation $i$</li>
+                                    <li>$y_i$ = observed value for observation $i$</li>
+                                    <li>$\hat{y}_i$ = predicted value for observation $i$</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="formula-section">
+                        <h3>Vector Notation</h3>
+                        <div class="formula-box">
+                            <p class="formula">$$\mathbf{e} = \mathbf{y} - \hat{\mathbf{y}}$$</p>
+                            <p class="formula-note">
+                                Where <strong>e</strong>, <strong>y</strong>, and <strong>ŷ</strong> are vectors of residuals, 
+                                observed values, and predicted values respectively.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="properties-section">
+                        <h3>Mathematical Properties</h3>
+                        <div class="properties-grid">
+                            <div class="property-card">
+                                <h4>Sum Property</h4>
+                                <p class="formula">$$\sum_{i=1}^{n} e_i = 0$$</p>
+                                <p>The sum of residuals equals zero in least squares regression</p>
+                            </div>
+                            
+                            <div class="property-card">
+                                <h4>Mean Property</h4>
+                                <p class="formula">$$\bar{e} = 0$$</p>
+                                <p>The mean of residuals is zero</p>
+                            </div>
+                            
+                            <div class="property-card">
+                                <h4>Orthogonality</h4>
+                                <p class="formula">$$\sum_{i=1}^{n} x_i e_i = 0$$</p>
+                                <p>Residuals are orthogonal to predictors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types of Residuals -->
+        <section class="content-section" id="types-of-residuals">
+            <div class="container">
+                <h2 class="section-title">3. Types of Residuals</h2>
+                
+                <div class="types-grid">
+                    <div class="type-card">
+                        <h3>1. Raw Residuals</h3>
+                        <div class="formula-box">
+                            <p class="formula">$$e_i = y_i - \hat{y}_i$$</p>
+                        </div>
+                        <p>
+                            The basic residual - simply the difference between observed and predicted values.
+                            These are the most straightforward to calculate and interpret.
+                        </p>
+                        <div class="use-case">
+                            <strong>Use Case:</strong> Initial model assessment, basic diagnostics
+                        </div>
+                    </div>
+
+                    <div class="type-card">
+                        <h3>2. Standardized Residuals</h3>
+                        <div class="formula-box">
+                            <p class="formula">$$r_i = \frac{e_i}{s}$$</p>
+                            <p class="formula-note">Where $s$ is the residual standard error</p>
+                        </div>
+                        <p>
+                            Raw residuals divided by their standard error. This makes residuals comparable 
+                            across different scales and helps identify outliers.
+                        </p>
+                        <div class="use-case">
+                            <strong>Use Case:</strong> Outlier detection, comparing across different datasets
+                        </div>
+                    </div>
+
+                    <div class="type-card">
+                        <h3>3. Studentized Residuals</h3>
+                        <div class="formula-box">
+                            <p class="formula">$$t_i = \frac{e_i}{s\sqrt{1-h_i}}$$</p>
+                            <p class="formula-note">Where $h_i$ is the leverage of observation $i$</p>
+                        </div>
+                        <p>
+                            Accounts for the varying precision of different fitted values. 
+                            More reliable for outlier detection than standardized residuals.
+                        </p>
+                        <div class="use-case">
+                            <strong>Use Case:</strong> Advanced outlier detection, model validation
+                        </div>
+                    </div>
+
+                    <div class="type-card">
+                        <h3>4. Deleted Residuals</h3>
+                        <div class="formula-box">
+                            <p class="formula">$$d_i = y_i - \hat{y}_{i(-i)}$$</p>
+                            <p class="formula-note">Prediction made without observation $i$</p>
+                        </div>
+                        <p>
+                            The residual when the observation is excluded from fitting the model. 
+                            Useful for detecting influential observations.
+                        </p>
+                        <div class="use-case">
+                            <strong>Use Case:</strong> Influence analysis, robust modeling
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Importance -->
+        <section class="content-section" id="importance">
+            <div class="container">
+                <h2 class="section-title">4. Why Residuals Matter</h2>
+                <div class="importance-grid">
+                    <div class="importance-card">
+                        <div class="card-icon">🎯</div>
+                        <h3>Model Assessment</h3>
+                        <p>
+                            Residuals help evaluate how well your model fits the data. 
+                            Patterns in residuals reveal model inadequacies.
+                        </p>
+                    </div>
+                    
+                    <div class="importance-card">
+                        <div class="card-icon">🔍</div>
+                        <h3>Assumption Checking</h3>
+                        <p>
+                            Statistical models make assumptions about residuals (normality, homoscedasticity). 
+                            Residual analysis verifies these assumptions.
+                        </p>
+                    </div>
+                    
+                    <div class="importance-card">
+                        <div class="card-icon">⚠️</div>
+                        <h3>Outlier Detection</h3>
+                        <p>
+                            Large residuals identify outliers or unusual observations that may need 
+                            special attention or investigation.
+                        </p>
+                    </div>
+                    
+                    <div class="importance-card">
+                        <div class="card-icon">📈</div>
+                        <h3>Model Improvement</h3>
+                        <p>
+                            Patterns in residual plots suggest ways to improve the model, 
+                            such as adding variables or transforming data.
+                        </p>
+                    </div>
+                    
+                    <div class="importance-card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>Validation</h3>
+                        <p>
+                            Residual analysis is essential for validating that your model 
+                            is appropriate for the data and research question.
+                        </p>
+                    </div>
+                    
+                    <div class="importance-card">
+                        <div class="card-icon">🎲</div>
+                        <h3>Prediction Intervals</h3>
+                        <p>
+                            Residuals help estimate the uncertainty in predictions and 
+                            construct prediction intervals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interpretation -->
+        <section class="content-section" id="interpretation">
+            <div class="container">
+                <h2 class="section-title">5. How to Interpret Residuals</h2>
+                
+                <div class="interpretation-section">
+                    <h3>Residual Size Guidelines</h3>
+                    <div class="guidelines-table">
+                        <table class="interpretation-table">
+                            <thead>
+                                <tr>
+                                    <th>Residual Type</th>
+                                    <th>Small</th>
+                                    <th>Moderate</th>
+                                    <th>Large</th>
+                                    <th>Very Large</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Raw Residuals</td>
+                                    <td>Close to 0</td>
+                                    <td>1-2 × typical scale</td>
+                                    <td>3-4 × typical scale</td>
+                                    <td>> 4 × typical scale</td>
+                                </tr>
+                                <tr>
+                                    <td>Standardized</td>
+                                    <td>|r| < 1</td>
+                                    <td>1 ≤ |r| < 2</td>
+                                    <td>2 ≤ |r| < 3</td>
+                                    <td>|r| ≥ 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Studentized</td>
+                                    <td>|t| < 2</td>
+                                    <td>2 ≤ |t| < 2.5</td>
+                                    <td>2.5 ≤ |t| < 3</td>
+                                    <td>|t| ≥ 3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="interpretation-section">
+                    <h3>Signs and Meanings</h3>
+                    <div class="signs-grid">
+                        <div class="sign-card positive">
+                            <h4>Positive Residual (+)</h4>
+                            <p class="formula">$e_i > 0$</p>
+                            <p>
+                                <strong>Meaning:</strong> The observed value is greater than predicted. 
+                                The model <em>underestimated</em> the actual value.
+                            </p>
+                            <div class="example">
+                                <strong>Example:</strong> Predicted price $100k, actual price $110k → residual = +$10k
+                            </div>
+                        </div>
+                        
+                        <div class="sign-card negative">
+                            <h4>Negative Residual (−)</h4>
+                            <p class="formula">$e_i < 0$</p>
+                            <p>
+                                <strong>Meaning:</strong> The observed value is less than predicted. 
+                                The model <em>overestimated</em> the actual value.
+                            </p>
+                            <div class="example">
+                                <strong>Example:</strong> Predicted price $100k, actual price $90k → residual = −$10k
+                            </div>
+                        </div>
+                        
+                        <div class="sign-card zero">
+                            <h4>Zero Residual (0)</h4>
+                            <p class="formula">$e_i = 0$</p>
+                            <p>
+                                <strong>Meaning:</strong> Perfect prediction! The observed value exactly 
+                                matches the predicted value.
+                            </p>
+                            <div class="example">
+                                <strong>Example:</strong> Predicted price $100k, actual price $100k → residual = $0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Calculate Residuals?</h2>
+                    <p>Use our online calculator to compute different types of residuals with step-by-step explanations.</p>
+                    <div class="cta-buttons">
+                        <a href="/calculator/" class="btn btn--primary">Open Calculator</a>
+                        <a href="/formulas/" class="btn">View Formulas</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">Residual Calculator</h3>
+                    <p class="footer__description">
+                        Professional tools for statistical analysis and residual calculations.
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="/definition/">Definition</a></li>
+                        <li><a href="/formulas/">Formulas</a></li>
+                        <li><a href="/calculator/">Calculator</a></li>
+                        <li><a href="/examples/">Examples</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Resources</h4>
+                    <ul class="footer__links">
+                        <li><a href="#help">Help & FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 Residual Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html> 

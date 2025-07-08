@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residual Calculator | How to Calculate Residual</title>
+    <meta name="description" content="Professional residual calculator supporting multiple residual types. Learn residual definitions, formulas, and calculation methods with online tools and detailed tutorials.">
+    <meta name="keywords" content="residual calculator, how to calculate residual, statistical analysis, regression analysis, standardized residual">
+    <meta name="author" content="Residual Calculator">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Residual Calculator | How to Calculate Residual">
+    <meta property="og:description" content="Professional residual calculator supporting multiple residual types. Learn residual definitions, formulas, and calculation methods.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://residualcalculator.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="/" class="nav__logo">
+                    <span class="nav__logo-icon">📊</span>
+                    Residual Calculator
+                </a>
+            </div>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="/" class="nav__link nav__link--active">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/definition/" class="nav__link">Definition</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/formulas/" class="nav__link">Formulas</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/calculator/" class="nav__link">Calculator</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/examples/" class="nav__link">Examples</a>
+                </li>
+            </ul>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">How to Calculate Residual</h1>
+                    <p class="hero__subtitle">
+                        Professional online residual calculator with step-by-step explanations. 
+                        Calculate basic, standardized, and studentized residuals instantly.
+                    </p>
+                    
+                    <!-- Quick Calculator -->
+                    <div class="quick-calculator">
+                        <h2 class="quick-calculator__title">Quick Residual Calculator</h2>
+                        <form class="calculator-form" id="quick-calc">
+                            <div class="form-group">
+                                <label for="observed" class="form-label">Observed Value</label>
+                                <input type="number" id="observed" class="form-input" 
+                                       placeholder="Enter observed value" step="any" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="predicted" class="form-label">Predicted Value</label>
+                                <input type="number" id="predicted" class="form-input" 
+                                       placeholder="Enter predicted value" step="any" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">Calculate Residual</button>
+                        </form>
+                        
+                        <div class="result" id="quick-result" style="display: none;">
+                            <h3 class="result__title">Result</h3>
+                            <div class="result__content">
+                                <p class="result__formula">Residual = Observed - Predicted</p>
+                                <p class="result__calculation" id="result-calculation"></p>
+                                <p class="result__value" id="result-value"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Residual Introduction -->
+        <section class="introduction">
+            <div class="container">
+                <div class="introduction__content">
+                    <h2 class="section-title">What is a Residual?</h2>
+                    <div class="introduction__grid">
+                        <div class="introduction__text">
+                            <p>
+                                A <strong>residual</strong> is the difference between an observed value and the value predicted by a statistical model. 
+                                In regression analysis, residuals help us understand how well our model fits the data and identify potential outliers or patterns.
+                            </p>
+                            
+                            <div class="formula-box">
+                                <p class="formula-title">Basic Residual Formula:</p>
+                                <p class="formula">$$\text{Residual} = \text{Observed Value} - \text{Predicted Value}$$</p>
+                                <p class="formula">$$e_i = y_i - \hat{y}_i$$</p>
+                            </div>
+                            
+                            <p>
+                                Residuals are crucial for:
+                            </p>
+                            <ul class="feature-list">
+                                <li>Model validation and diagnostics</li>
+                                <li>Identifying outliers and influential points</li>
+                                <li>Checking model assumptions</li>
+                                <li>Improving model performance</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="introduction__features">
+                            <h3>Our Calculator Supports</h3>
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <h4>Basic Residuals</h4>
+                                    <p>Simple difference between observed and predicted values</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h4>Standardized Residuals</h4>
+                                    <p>Residuals divided by their standard error</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h4>Studentized Residuals</h4>
+                                    <p>Residuals with adjusted standard errors</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h4>Batch Processing</h4>
+                                    <p>Calculate multiple residuals at once</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="quick-links">
+            <div class="container">
+                <h2 class="section-title">Explore More</h2>
+                <div class="links-grid">
+                    <a href="/definition/" class="link-card">
+                        <div class="link-card__icon">📖</div>
+                        <h3 class="link-card__title">Detailed Definition</h3>
+                        <p class="link-card__description">Learn the complete definition and types of residuals</p>
+                    </a>
+                    
+                    <a href="/formulas/" class="link-card">
+                        <div class="link-card__icon">🔢</div>
+                        <h3 class="link-card__title">Mathematical Formulas</h3>
+                        <p class="link-card__description">All residual formulas with step-by-step derivations</p>
+                    </a>
+                    
+                    <a href="/calculator/" class="link-card">
+                        <div class="link-card__icon">🧮</div>
+                        <h3 class="link-card__title">Advanced Calculator</h3>
+                        <p class="link-card__description">Full-featured calculator with multiple residual types</p>
+                    </a>
+                    
+                    <a href="/examples/" class="link-card">
+                        <div class="link-card__icon">📚</div>
+                        <h3 class="link-card__title">Practical Examples</h3>
+                        <p class="link-card__description">Real-world examples and use cases</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">Residual Calculator</h3>
+                    <p class="footer__description">
+                        Professional tools for statistical analysis and residual calculations.
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="/definition/">Definition</a></li>
+                        <li><a href="/formulas/">Formulas</a></li>
+                        <li><a href="/calculator/">Calculator</a></li>
+                        <li><a href="/examples/">Examples</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Resources</h4>
+                    <ul class="footer__links">
+                        <li><a href="#help">Help & FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 Residual Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/calculator.js"></script>
+</body>
+</html> 

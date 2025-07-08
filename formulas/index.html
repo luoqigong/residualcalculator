@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residual Formulas - Mathematical Guide | Residual Calculator</title>
+    <meta name="description" content="Complete guide to residual formulas including basic, standardized, studentized, and deleted residuals. Mathematical derivations and practical applications.">
+    <meta name="keywords" content="residual formula, standardized residual calculation, studentized residual formula, regression residuals, statistical formulas">
+    <meta name="author" content="Residual Calculator">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Residual Formulas - Mathematical Guide">
+    <meta property="og:description" content="Complete guide to residual formulas with mathematical derivations and practical applications.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://residualcalculator.org/formulas/">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://residualcalculator.org/formulas/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="/" class="nav__logo">
+                    <span class="nav__logo-icon">📊</span>
+                    Residual Calculator
+                </a>
+            </div>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="/" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/definition/" class="nav__link">Definition</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/formulas/" class="nav__link nav__link--active">Formulas</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/calculator/" class="nav__link">Calculator</a>
+                </li>
+                <li class="nav__item">
+                    <a href="/examples/" class="nav__link">Examples</a>
+                </li>
+            </ul>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Residual Formulas</h1>
+                    <p class="hero__subtitle">
+                        Complete mathematical reference for all types of residual calculations, 
+                        including derivations and practical applications.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formula Categories -->
+        <section class="formula-categories">
+            <div class="container">
+                <div class="categories-grid">
+                    <a href="#basic-residuals" class="category-card">
+                        <div class="category-icon">📏</div>
+                        <h3>Basic Residuals</h3>
+                        <p>Fundamental residual calculations</p>
+                    </a>
+                    
+                    <a href="#standardized-residuals" class="category-card">
+                        <div class="category-icon">📊</div>
+                        <h3>Standardized</h3>
+                        <p>Normalized residual formulas</p>
+                    </a>
+                    
+                    <a href="#studentized-residuals" class="category-card">
+                        <div class="category-icon">🎓</div>
+                        <h3>Studentized</h3>
+                        <p>Advanced residual calculations</p>
+                    </a>
+                    
+                    <a href="#other-formulas" class="category-card">
+                        <div class="category-icon">⚙️</div>
+                        <h3>Advanced</h3>
+                        <p>Specialized residual types</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basic Residuals -->
+        <section class="formula-section" id="basic-residuals">
+            <div class="container">
+                <h2 class="section-title">Basic Residuals</h2>
+                
+                <div class="formula-card">
+                    <h3 class="formula-title">Simple Residual</h3>
+                    <div class="formula-content">
+                        <div class="formula-box">
+                            <p class="formula">$$e_i = y_i - \hat{y}_i$$</p>
+                        </div>
+                        
+                        <div class="formula-details">
+                            <h4>Where:</h4>
+                            <ul>
+                                <li>$e_i$ = residual for observation $i$</li>
+                                <li>$y_i$ = observed value for observation $i$</li>
+                                <li>$\hat{y}_i$ = predicted value for observation $i$</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="use-cases">
+                            <h4>Applications:</h4>
+                            <ul class="feature-list">
+                                <li>Basic model evaluation</li>
+                                <li>Error measurement</li>
+                                <li>Initial diagnostic analysis</li>
+                                <li>Outlier identification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-card">
+                    <h3 class="formula-title">Residual Sum of Squares (RSS)</h3>
+                    <div class="formula-content">
+                        <div class="formula-box">
+                            <p class="formula">$$RSS = \sum_{i=1}^{n} e_i^2 = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$</p>
+                        </div>
+                        
+                        <div class="formula-details">
+                            <h4>Alternative notations:</h4>
+                            <p class="formula">$$SSE = \sum_{i=1}^{n} e_i^2$$</p>
+                            <p class="formula-note">(Sum of Squared Errors)</p>
+                        </div>
+                        
+                        <div class="derivation">
+                            <h4>Purpose:</h4>
+                            <p>Measures the total amount of unexplained variation in the model. Lower RSS indicates better fit.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-card">
+                    <h3 class="formula-title">Mean Squared Error (MSE)</h3>
+                    <div class="formula-content">
+                        <div class="formula-box">
+                            <p class="formula">$$MSE = \frac{RSS}{n-p} = \frac{\sum_{i=1}^{n} e_i^2}{n-p}$$</p>
+                        </div>
+                        
+                        <div class="formula-details">
+                            <h4>Where:</h4>
+                            <ul>
+                                <li>$n$ = number of observations</li>
+                                <li>$p$ = number of parameters (including intercept)</li>
+                                <li>$n-p$ = degrees of freedom</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="related-formulas">
+                            <h4>Related:</h4>
+                            <p>Standard Error: $s = \sqrt{MSE}$</p>
+                            <p>Root MSE: $RMSE = \sqrt{MSE}$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standardized Residuals -->
+        <section class="formula-section" id="standardized-residuals">
+            <div class="container">
+                <h2 class="section-title">Standardized Residuals</h2>
+                
+                <div class="formula-card">
+                    <h3 class="formula-title">Standard Residual</h3>
+                    <div class="formula-content">
+                        <div class="formula-box">
+                            <p class="formula">$$r_i = \frac{e_i}{s}$$</p>
+                        </div>
+                        
+                        <div class="formula-details">
+                            <h4>Where:</h4>
+                            <ul>
+                                <li>$r_i$ = standardized residual for observation $i$</li>
+                                <li>$e_i$ = raw residual for observation $i$</li>
+                                <li>$s$ = residual standard error = $\sqrt{MSE}$</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="interpretation">
+                            <h4>Interpretation Guidelines:</h4>
+                            <div class="guidelines-table">
+                                <table>
+                                    <tr>
+                                        <td>$|r_i| < 2$</td>
+                                        <td>Normal observation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$2 \leq |r_i| < 3$</td>
+                                        <td>Potential outlier</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$|r_i| \geq 3$</td>
+                                        <td>Likely outlier</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-card">
+                    <h3 class="formula-title">Internally Studentized Residual</h3>
+                    <div class="formula-content">
+                        <div class="formula-box">
+                            <p class="formula">$$r_i = \frac{e_i}{s\sqrt{1-h_i}}$$</p>
+                        </div>
+                        
+                        <div class="formula-details">
+                            <h4>Where:</h4>
+                            <ul>
+                                <li>$h_i$ = leverage of observation $i$</li>
+                                <li>$s$ = residual standard error</li>
+                                <li>$1-h_i$ = adjustment for leverage</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="leverage-formula">
+                            <h4>Leverage Formula:</h4>
+                            <p class="formula">$$h_i = \mathbf{x}_i^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_i$$</p>
+                            <p class="formula-note">For simple linear regression: $h_i = \frac{1}{n} + \frac{(x_i - \bar{x})^2}{\sum(x_j - \bar{x})^2}$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studentized Residuals -->
+        <section class="formula-section" id="studentized-residuals">
+            <div class="container">
+                <h2 class="section-title">Studentized Residuals</h2>
+                
+                <div class="formula-card">
+                    <h3 class="formula-title">Externally Studentized Residual</h3>
+                    <div class="formula-content">
+                        <div class="formula-box">
+                            <p class="formula">$$t_i = \frac{e_i}{s_{(i)}\sqrt{1-h_i}}$$</p>
+                        </div>
+                        
+                        <div class="formula-details">
+                            <h4>Where:</h4>
+                            <ul>
+                                <li>$s_{(i)}$ = residual standard error calculated without observation $i$</li>
+                                <li>$h_i$ = leverage of observation $i$</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="calculation-steps">
+                            <h4>Calculation Steps:</h4>
+                            <ol>
+                                <li>Remove observation $i$ from dataset</li>
+                                <li>Fit model to remaining $n-1$ observations</li>
+                                <li>Calculate $s_{(i)}$ from this reduced model</li>
+                                <li>Apply formula above</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="distribution">
+                            <h4>Distribution:</h4>
+                            <p>$t_i$ follows a $t$-distribution with $n-p-1$ degrees of freedom</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-card">
+                    <h3 class="formula-title">Relationship Between Residual Types</h3>
+                    <div class="formula-content">
+                        <div class="formula-box">
+                            <p class="formula">$$t_i = r_i\sqrt{\frac{n-p-1}{n-p-r_i^2}}$$</p>
+                        </div>
+                        
+                        <div class="formula-details">
+                            <p>This shows the relationship between internally studentized ($r_i$) and externally studentized ($t_i$) residuals.</p>
+                        </div>
+                        
+                        <div class="practical-note">
+                            <h4>Practical Note:</h4>
+                            <p>When $r_i$ is small, $t_i \approx r_i$. The difference becomes significant for large residuals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Formulas -->
+        <section class="formula-section" id="other-formulas">
+            <div class="container">
+                <h2 class="section-title">Advanced Formulas</h2>
+                
+                <div class="formula-card">
+                    <h3 class="formula-title">PRESS Residual</h3>
+                    <div class="formula-content">
+                        <div class="formula-box">
+                            <p class="formula">$$e_{(i)} = y_i - \hat{y}_{(i)}$$</p>
+                        </div>
+                        
+                        <div class="formula-details">
+                            <h4>Where:</h4>
+                            <ul>
+                                <li>$e_{(i)}$ = PRESS residual for observation $i$</li>
+                                <li>$\hat{y}_{(i)}$ = prediction for $y_i$ using model fitted without observation $i$</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="relationship">
+                            <h4>Relationship to Standard Residual:</h4>
+                            <p class="formula">$$e_{(i)} = \frac{e_i}{1-h_i}$$</p>
+                        </div>
+                        
+                        <div class="press-statistic">
+                            <h4>PRESS Statistic:</h4>
+                            <p class="formula">$$PRESS = \sum_{i=1}^{n} e_{(i)}^2$$</p>
+                            <p>Used for model validation and comparison</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-card">
+                    <h3 class="formula-title">Recursive Residual</h3>
+                    <div class="formula-content">
+                        <div class="formula-box">
+                            <p class="formula">$$w_t = \frac{y_t - \mathbf{x}_t^T\hat{\boldsymbol{\beta}}_{t-1}}{\sqrt{1 + \mathbf{x}_t^T(\mathbf{X}_{t-1}^T\mathbf{X}_{t-1})^{-1}\mathbf{x}_t}}$$</p>
+                        </div>
+                        
+                        <div class="formula-details">
+                            <h4>Where:</h4>
+                            <ul>
+                                <li>$w_t$ = recursive residual at time $t$</li>
+                                <li>$\hat{\boldsymbol{\beta}}_{t-1}$ = parameter estimates using first $t-1$ observations</li>
+                                <li>$\mathbf{X}_{t-1}$ = design matrix for first $t-1$ observations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="applications">
+                            <h4>Applications:</h4>
+                            <ul class="feature-list">
+                                <li>Structural break testing</li>
+                                <li>Model stability analysis</li>
+                                <li>Sequential data analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formula-card">
+                    <h3 class="formula-title">Partial Residual</h3>
+                    <div class="formula-content">
+                        <div class="formula-box">
+                            <p class="formula">$$e_i^{(j)} = e_i + \hat{\beta}_j x_{ij}$$</p>
+                        </div>
+                        
+                        <div class="formula-details">
+                            <h4>Where:</h4>
+                            <ul>
+                                <li>$e_i^{(j)}$ = partial residual for variable $j$ and observation $i$</li>
+                                <li>$e_i$ = ordinary residual</li>
+                                <li>$\hat{\beta}_j$ = estimated coefficient for variable $j$</li>
+                                <li>$x_{ij}$ = value of variable $j$ for observation $i$</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="purpose">
+                            <h4>Purpose:</h4>
+                            <p>Used in partial residual plots to check linearity of individual predictors in multiple regression.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section class="quick-reference">
+            <div class="container">
+                <h2 class="section-title">Quick Reference Table</h2>
+                <div class="reference-table-container">
+                    <table class="reference-table">
+                        <thead>
+                            <tr>
+                                <th>Residual Type</th>
+                                <th>Formula</th>
+                                <th>Main Use</th>
+                                <th>Outlier Threshold</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Raw</td>
+                                <td>$e_i = y_i - \hat{y}_i$</td>
+                                <td>Basic analysis</td>
+                                <td>Context dependent</td>
+                            </tr>
+                            <tr>
+                                <td>Standardized</td>
+                                <td>$r_i = e_i / s$</td>
+                                <td>Scale-free comparison</td>
+                                <td>$|r_i| > 2$</td>
+                            </tr>
+                            <tr>
+                                <td>Studentized (Internal)</td>
+                                <td>$r_i = e_i / (s\sqrt{1-h_i})$</td>
+                                <td>Leverage adjustment</td>
+                                <td>$|r_i| > 2$</td>
+                            </tr>
+                            <tr>
+                                <td>Studentized (External)</td>
+                                <td>$t_i = e_i / (s_{(i)}\sqrt{1-h_i})$</td>
+                                <td>Robust outlier detection</td>
+                                <td>$|t_i| > 2.5$</td>
+                            </tr>
+                            <tr>
+                                <td>PRESS</td>
+                                <td>$e_{(i)} = e_i / (1-h_i)$</td>
+                                <td>Cross-validation</td>
+                                <td>Large PRESS values</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Apply These Formulas</h2>
+                    <p>Use our calculator to compute these residuals automatically with your data.</p>
+                    <div class="cta-buttons">
+                        <a href="/calculator/" class="btn btn--primary">Open Calculator</a>
+                        <a href="/examples/" class="btn">See Examples</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">Residual Calculator</h3>
+                    <p class="footer__description">
+                        Professional tools for statistical analysis and residual calculations.
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="/definition/">Definition</a></li>
+                        <li><a href="/formulas/">Formulas</a></li>
+                        <li><a href="/calculator/">Calculator</a></li>
+                        <li><a href="/examples/">Examples</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Resources</h4>
+                    <ul class="footer__links">
+                        <li><a href="#help">Help & FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 Residual Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html> 

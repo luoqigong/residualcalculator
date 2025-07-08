@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://residualcalculator.org/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Definition Page -->
+    <url>
+        <loc>https://residualcalculator.org/definition/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Formulas Page -->
+    <url>
+        <loc>https://residualcalculator.org/formulas/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Calculator Page -->
+    <url>
+        <loc>https://residualcalculator.org/calculator/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Examples Page -->
+    <url>
+        <loc>https://residualcalculator.org/examples/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Calculator Sub-pages (for deep linking) -->
+    <url>
+        <loc>https://residualcalculator.org/calculator/#basic</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://residualcalculator.org/calculator/#standardized</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://residualcalculator.org/calculator/#studentized</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://residualcalculator.org/calculator/#batch</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+</urlset> 
